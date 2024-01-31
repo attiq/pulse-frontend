@@ -1,4 +1,9 @@
 {
+  "name": "pulse-frontend",
+  "version": "1.0.0",
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emotion/react": "^11.9.0",
