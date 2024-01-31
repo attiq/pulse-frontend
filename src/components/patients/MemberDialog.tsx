@@ -82,9 +82,8 @@ export const MemberDialog = (props: any) => {
   };
 
   const handleDobChange = (value: any) => {
-    const dob = value.format('MM/DD/YYYY');
-    setSelectedDob(dob);
-    setValue('dob', dob);
+    setSelectedDob(value.format('MM/DD/YYYY'));
+    setValue('dob', value.format('YYYY-MM-DD'));
     trigger('dob');
     clearErros(formErrors, setFormErrors, true, memberValidations.DOB);
   };
