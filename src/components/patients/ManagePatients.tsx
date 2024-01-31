@@ -1,4 +1,3 @@
-import Navbar from '../common/Navbar';
 import { useState, useEffect } from 'react';
 import { Login } from '../users/login';
 import dayjs from 'dayjs';
@@ -15,6 +14,7 @@ import { opportunityStages } from '../../constants/appConstants';
 import { RootState } from '../../reducers';
 import { searchOpportunities } from '../../actions/OpportunitiesActions';
 import { IOpportunity } from '../../interfaces/IOpportunity';
+import { Navbar } from '../common/Navbar';
 
 export const ManagePatients = () => {
   const classes = useStyles();
@@ -29,7 +29,7 @@ export const ManagePatients = () => {
 
   useEffect(() => {
     if (token) {
-      baseApi.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      baseApi.defaults.headers.common['Authorization'] = `${token}`;
       dispatch(getAllOpportunities());
     }
   }, [dispatch, token]);
@@ -80,7 +80,7 @@ export const ManagePatients = () => {
       {alert?.isShown && <Alert alert={alert} handleAlert={handleAlert} />}
       <Box className={`${classes.mainContent}`}>
         <Box className={`${classes.contentContainer} full-height`}>
-          <Navbar />
+          <Navbar setToken={setToken} />
           <Grid container spacing={1}>
             <Grid item xs={9}>
               <Typography variant='h2'>Patients</Typography>

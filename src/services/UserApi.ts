@@ -14,3 +14,15 @@ export const loginUser = (data: any, setToken: any) => async (dispatch: Dispatch
     dispatch(userErrorAction([error.response.data]));
   }
 };
+
+export const logoutUser = (setToken: any) => async (dispatch: Dispatch) => {
+  try {
+    await baseApi.delete('/logout');
+    sessionStorage.removeItem('token');
+    setToken(null)
+  } catch (error: any) {
+    console.log(error.response.data);
+
+    dispatch(userErrorAction([error.response.data]));
+  }
+};

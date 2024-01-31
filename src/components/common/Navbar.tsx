@@ -4,6 +4,8 @@ import LinkTag from '@mui/material/Link';
 import { makeStyles } from '@mui/styles';
 import LogoImage from '../../assets/images/logo_image.svg';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logoutUser } from '../../services/UserApi';
 
 const useStyles = makeStyles({
   nav: {
@@ -19,15 +21,28 @@ const useStyles = makeStyles({
     boxShadow: '0px 4px 4px 0px #00000040',
   },
   navBrand: {
-    width: '13.75rem',
+    width: '94%',
     height: '100%',
     padding: '0.75rem 2.5rem 0.5rem 1.5rem',
   },
+  navLink: {
+    display: 'block',
+    padding: '1rem',
+    fontSize: '1rem !important',
+    fontWeight: '500 !important',
+    cursor: 'pointer',
+  },
 });
 
-function Navbar() {
+export const Navbar = (props: any) => {
+  const { setToken } = props;
   const classes = useStyles();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(logoutUser(setToken));
+  };
 
   return (
     <nav className={classes.nav}>
@@ -36,8 +51,9 @@ function Navbar() {
           <img src={LogoImage} alt='Pulse' />
         </LinkTag>
       </Box>
+      <LinkTag className={classes.navLink} onClick={handleLogout}>
+        Logout
+      </LinkTag>
     </nav>
   );
-}
-
-export default Navbar;
+};
