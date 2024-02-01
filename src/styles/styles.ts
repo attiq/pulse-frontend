@@ -17,8 +17,9 @@ export const useStyles = makeStyles({
       marginLeft: '0rem',
     },
     '& .MuiButtonBase-root': {
-      padding: '.2rem .2rem !important',
-      fontSize: '1rem !important',
+      padding: '.3rem .2rem !important',
+      fontSize: '.9rem !important',
+      borderRadius: '1.25rem',
     },
   },
   // Forms
@@ -30,7 +31,7 @@ export const useStyles = makeStyles({
     borderWidth: '1px',
     borderStyle: 'solid',
     borderColor: 'rgba(0, 0, 0, 0.23)',
-    borderRadius: '0.25rem',
+    borderRadius: '1.25rem',
     backgroundColor: '#fff',
     padding: '1rem 1.125rem',
     width: '100%',
@@ -125,6 +126,7 @@ export const useStyles = makeStyles({
     '& .MuiButtonBase-root': {
       padding: '.1rem !important',
       fontSize: '.8rem !important',
+      borderRadius: '1.25rem',
     },
   },
 
@@ -259,6 +261,9 @@ export const useStyles = makeStyles({
         display: 'none',
       },
     },
+    '& .MuiOutlinedInput-notchedOutline': {
+      borderRadius: '1.25rem',
+    },
     '&.no-label': {
       '& .MuiOutlinedInput-notchedOutline': {
         top: '0',
@@ -300,6 +305,7 @@ export const useStyles = makeStyles({
       },
     },
     '& .MuiOutlinedInput-notchedOutline': {
+      borderRadius: '1.25rem',
       borderColor: '#e3795b !important',
     },
     '&.no-label': {

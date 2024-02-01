@@ -42,5 +42,10 @@ body {
 }
 
 .hidden {
- display: none;
+  display: none;
+}
+
+.MuiButtonBase-root {
+  border-radius: 1.25rem !important;
+  font-size: .9rem;
 }
