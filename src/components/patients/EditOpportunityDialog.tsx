@@ -127,13 +127,12 @@ export const EditOpportunityDialog = (props: any) => {
               )}
               <Grid item xs={12}>
                 <FormControl fullWidth className={classes.formTextInput}>
-                  <Typography variant='body1'>Procedure*</Typography>
                   <input
                     {...register('procedure_name', registerOptions.procedure_name)}
                     name='procedure_name'
                     type='text'
                     defaultValue={opportunity?.procedure_name}
-                    placeholder='Enter Procedure'
+                    placeholder='Procedure*'
                     className={formErrors?.filter((e: string) => e === opportunityValidations.PROCEDURE).length > 0 ? `${classes.formTextInputField} invalid` : classes.formTextInputField}
                     onKeyUp={(e) => handleInput(e, formErrors?.filter((e: string) => e === opportunityValidations.PROCEDURE)[0])}
                   />
@@ -142,7 +141,6 @@ export const EditOpportunityDialog = (props: any) => {
 
               <Grid item xs={12}>
                 <FormControl fullWidth className={formErrors?.find((e: string) => e === opportunityValidations.DOCTOR) ? `${classes.formSelectInValid}` : `${classes.formSelectInput} no-label`}>
-                  <Typography variant='body1'>Doctor*</Typography>
                   <Select
                     fullWidth
                     MenuProps={MenuProps}
@@ -152,7 +150,7 @@ export const EditOpportunityDialog = (props: any) => {
                     IconComponent={ArrowDropDownIcon}
                     sx={{
                       '& .MuiSelect-select .notranslate::after': {
-                        content: `"Select Doctor"`,
+                        content: `"Doctor*"`,
                         opacity: 0.42,
                       },
                     }}
@@ -167,7 +165,7 @@ export const EditOpportunityDialog = (props: any) => {
               </Grid>
 
               <Grid item xs={12}>
-                <Typography variant='h5'>Stage History</Typography>
+                <Typography variant='h5' mb={1}>Stage History</Typography>
                 {selectedStages.map((stage: string, index: number) => (
                   <StageHistoryRow stage={stage} opportunity={opportunity} selectedStages={selectedStages} setSelectedStages={setSelectedStages} />
                 ))}

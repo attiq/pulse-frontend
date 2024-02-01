@@ -124,12 +124,11 @@ export const AddOpportunityDialog = (props: any) => {
               )}
               <Grid item xs={12}>
                 <FormControl fullWidth className={classes.formTextInput}>
-                  <Typography variant='body1'>Procedure*</Typography>
                   <input
                     {...register('procedure_name', registerOptions.procedure_name)}
                     name='procedure_name'
                     type='text'
-                    placeholder='Enter Procedure'
+                    placeholder='Procedure*'
                     className={formErrors?.filter((e: string) => e === opportunityValidations.PROCEDURE).length > 0 ? `${classes.formTextInputField} invalid` : classes.formTextInputField}
                     onKeyUp={(e) => handleInput(e, formErrors?.filter((e: string) => e === opportunityValidations.PROCEDURE)[0])}
                   />
@@ -138,7 +137,6 @@ export const AddOpportunityDialog = (props: any) => {
 
               <Grid item xs={12}>
                 <FormControl fullWidth className={formErrors?.find((e: string) => e === opportunityValidations.DOCTOR) ? `${classes.formSelectInValid}` : `${classes.formSelectInput} no-label`}>
-                  <Typography variant='body1'>Doctor*</Typography>
                   <Select
                     fullWidth
                     MenuProps={MenuProps}
@@ -148,7 +146,7 @@ export const AddOpportunityDialog = (props: any) => {
                     IconComponent={ArrowDropDownIcon}
                     sx={{
                       '& .MuiSelect-select .notranslate::after': {
-                        content: `"Select Doctor"`,
+                        content: `"Doctor*"`,
                         opacity: 0.42,
                       },
                     }}
@@ -164,7 +162,6 @@ export const AddOpportunityDialog = (props: any) => {
 
               <Grid item xs={12}>
                 <FormControl fullWidth className={formErrors?.find((e: string) => e === opportunityValidations.PATIENT) ? `${classes.formSelectInValid}` : `${classes.formSelectInput} no-label`}>
-                  <Typography variant='body1'>Patient*</Typography>
                   <Select
                     fullWidth
                     MenuProps={MenuProps}
@@ -174,7 +171,7 @@ export const AddOpportunityDialog = (props: any) => {
                     IconComponent={ArrowDropDownIcon}
                     sx={{
                       '& .MuiSelect-select .notranslate::after': {
-                        content: `"Select Patient"`,
+                        content: `"Patient*"`,
                         opacity: 0.42,
                       },
                     }}

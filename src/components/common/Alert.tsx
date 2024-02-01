@@ -9,6 +9,7 @@ export const Alert = ({ ...props }) => {
     setTimeout(function () {
       handleAlert('', false);
     }, 3000);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [alert]);
 
   const closeAlert = (event: any) => {

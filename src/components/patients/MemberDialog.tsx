@@ -140,12 +140,11 @@ export const MemberDialog = (props: any) => {
               </Grid>
               <Grid item xs={12}>
                 <FormControl fullWidth className={classes.formTextInput}>
-                  <Typography variant='body1'>First Name*</Typography>
                   <input
                     {...register('first_name', registerOptions.first_name)}
                     name='first_name'
                     type='text'
-                    placeholder='Enter First Name'
+                    placeholder='First Name*'
                     className={formErrors?.filter((e: string) => e === memberValidations.FIRST_NAME).length > 0 ? `${classes.formTextInputField} invalid` : classes.formTextInputField}
                     onKeyUp={(e) => handleInput(e, formErrors?.filter((e: string) => e === memberValidations.FIRST_NAME)[0])}
                   />
@@ -154,12 +153,11 @@ export const MemberDialog = (props: any) => {
 
               <Grid item xs={12}>
                 <FormControl fullWidth className={classes.formTextInput}>
-                  <Typography variant='body1'>Last Name*</Typography>
                   <input
                     {...register('last_name', registerOptions.last_name)}
                     name='last_name'
                     type='text'
-                    placeholder='Enter Last Name'
+                    placeholder='Last Name*'
                     className={formErrors?.filter((e: string) => e === memberValidations.LAST_NAME).length > 0 ? `${classes.formTextInputField} invalid` : classes.formTextInputField}
                     onKeyUp={(e) => handleInput(e, formErrors?.filter((e: string) => e === memberValidations.LAST_NAME)[0])}
                   />
@@ -168,7 +166,6 @@ export const MemberDialog = (props: any) => {
 
               <Grid item xs={12}>
                 <FormControl fullWidth className={formErrors?.find((e: string) => e === memberValidations.ROLE) ? `${classes.formSelectInValid}` : `${classes.formSelectInput} no-label`}>
-                  <Typography variant='body1'>Role*</Typography>
                   <Select
                     fullWidth
                     MenuProps={MenuProps}
@@ -178,7 +175,7 @@ export const MemberDialog = (props: any) => {
                     IconComponent={ArrowDropDownIcon}
                     sx={{
                       '& .MuiSelect-select .notranslate::after': {
-                        content: `"Select Role"`,
+                        content: `"Role*"`,
                         opacity: 0.42,
                       },
                     }}
@@ -194,7 +191,6 @@ export const MemberDialog = (props: any) => {
 
               <Grid item xs={6}>
                 <FormControl fullWidth className={formErrors?.find((e: string) => e === memberValidations.GENDER) ? `${classes.formSelectInValid}` : `${classes.formSelectInput} no-label`}>
-                  <Typography variant='body1'>Gender*</Typography>
                   <Select
                     fullWidth
                     MenuProps={MenuProps}
@@ -204,7 +200,7 @@ export const MemberDialog = (props: any) => {
                     IconComponent={ArrowDropDownIcon}
                     sx={{
                       '& .MuiSelect-select .notranslate::after': {
-                        content: `"Select Gender"`,
+                        content: `"Gender*"`,
                         opacity: 0.42,
                       },
                     }}
@@ -219,7 +215,7 @@ export const MemberDialog = (props: any) => {
               </Grid>
 
               <Grid item xs={6}>
-                <FormDatepicker label={'Date of Birth*'} value={selectedDob} onChangeHandler={handleDobChange} inValid={formErrors?.find((e: string) => e === memberValidations.DOB)} />
+                <FormDatepicker placeholder={'Date of Birth*'} value={selectedDob} onChangeHandler={handleDobChange} inValid={formErrors?.find((e: string) => e === memberValidations.DOB)} />
               </Grid>
             </Grid>
           </>

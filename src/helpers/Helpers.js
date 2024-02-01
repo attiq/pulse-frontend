@@ -30,6 +30,7 @@ export function formateAPIErros(apiErrors, formErrors, setFormErrors) {
     if (error && !updatedFormErrors.includes(error)) {
       updatedFormErrors = [...updatedFormErrors, error];
     }
+    // eslint-disable-next-line array-callback-return
     return;
   });
   setFormErrors(updatedFormErrors);

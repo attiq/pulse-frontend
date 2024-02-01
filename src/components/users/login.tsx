@@ -65,12 +65,11 @@ export const Login = (props: any) => {
               )}
               <Grid item xs={12}>
                 <FormControl fullWidth className={classes.formTextInput}>
-                  <Typography variant='body1'>Email*</Typography>
                   <input
                     {...register('email', registerOptions.email)}
                     name='email'
                     type='text'
-                    placeholder='Enter Email'
+                    placeholder='Enter Email*'
                     className={formErrors?.filter((e: string) => e === userValidations.EMAIL).length > 0 ? `${classes.formTextInputField} invalid` : classes.formTextInputField}
                     onKeyUp={(e) => handleInput(e, formErrors?.filter((e: string) => e === userValidations.EMAIL)[0])}
                   />
@@ -79,12 +78,11 @@ export const Login = (props: any) => {
 
               <Grid item xs={12} mt={1}>
                 <FormControl fullWidth className={classes.formTextInput}>
-                  <Typography variant='body1'>Password*</Typography>
                   <input
                     {...register('password', registerOptions.password)}
                     name='password'
                     type='password'
-                    placeholder='Enter Password'
+                    placeholder='Enter Password*'
                     className={formErrors?.filter((e: string) => e === userValidations.PASSWORD).length > 0 ? `${classes.formTextInputField} invalid` : classes.formTextInputField}
                     onKeyUp={(e) => handleInput(e, formErrors?.filter((e: string) => e === userValidations.PASSWORD)[0])}
                   />

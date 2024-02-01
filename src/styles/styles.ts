@@ -31,7 +31,7 @@ export const useStyles = makeStyles({
     borderWidth: '1px',
     borderStyle: 'solid',
     borderColor: 'rgba(0, 0, 0, 0.23)',
-    borderRadius: '1.25rem',
+    borderRadius: '.5rem',
     backgroundColor: '#fff',
     padding: '1rem 1.125rem',
     width: '100%',
@@ -262,7 +262,7 @@ export const useStyles = makeStyles({
       },
     },
     '& .MuiOutlinedInput-notchedOutline': {
-      borderRadius: '1.25rem',
+      borderRadius: '.5rem',
     },
     '&.no-label': {
       '& .MuiOutlinedInput-notchedOutline': {
@@ -305,7 +305,7 @@ export const useStyles = makeStyles({
       },
     },
     '& .MuiOutlinedInput-notchedOutline': {
-      borderRadius: '1.25rem',
+      borderRadius: '.5rem',
       borderColor: '#e3795b !important',
     },
     '&.no-label': {
